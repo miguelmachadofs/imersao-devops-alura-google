@@ -1,0 +1,12 @@
+version: "3.9" # Versão do arquivo de configuração do Docker Compose
+
+services:
+  app: # Nome do serviço
+    build: . # Constrói a imagem a partir do Dockerfile no diretório atual
+    container_name: imersao-devops-app # Nome do container gerado
+    ports:
+      - "5000:5000" # Mapeia a porta 5000 do host para a porta 5000 do container
+    volumes:
+      - .:/app # Sincroniza o diretório atual do host com o diretório /app do container
+    environment:
+      - PYTHONUNBUFFERED # Define a variável de ambiente para não fazer buffer na saída do
